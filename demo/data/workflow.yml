@@ -1,0 +1,20 @@
+name: cowsay
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  amazon-x64:
+    runs-on: [self-hosted, x64, linux, example, default]
+    strategy:
+      fail-fast: true
+      matrix: 
+        name: [radio, ren, renge, robot, sachiko, satanic, seahorse-big, seahorse, tableflip, taxi, telebears, template, threader, threecubes, toaster, tortoise, turkey, turtle]
+
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: message
+        run: |
+          npx cowsay -f ${{ matrix.name }} "${{ matrix.name }}"

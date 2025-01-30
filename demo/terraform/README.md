@@ -18,5 +18,5 @@ Demo shows how to use AWS EventBride for scaling GitHub self-hosted runners on A
    export TF_VAR_aws_region=YOUR_AWS_REGION
    ```
 6. Run `terraform init && terraform apply`.
-7. Next setup a GitHub actions workflow to trigger jobs.
+7. Next setup a GitHub actions workflow to trigger jobs. See for example the workflow used for the talk [`here`](../data/workflow.yml).
    

@@ -227,7 +227,8 @@ resource "aws_s3_bucket" "athena_result" {
 }
 
 resource "aws_athena_workgroup" "main" {
-  name = "${var.prefix}-workgroup"
+  name          = "${var.prefix}-workgroup"
+  force_destroy = true
 
   configuration {
     result_configuration {
